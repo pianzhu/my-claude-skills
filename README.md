@@ -1,97 +1,144 @@
 # My Claude Skills
 
-A collection of custom Claude skills for enhanced productivity and specialized tasks.
+A collection of custom Claude Code skills following the [official Anthropic skills format](https://github.com/anthropics/skills).
+
+## What are Claude Code Skills?
+
+Skills are modular capabilities that extend Claude Code's functionality. Each skill is a self-contained folder with a `SKILL.md` file containing YAML metadata and instructions that Claude follows when the skill is activated.
 
 ## 📁 Repository Structure
 
-This repository contains three categories of Claude skills:
-
 ```
 my-claude-skills/
-├── round-table-analysis/    # Skills for multi-perspective analysis and discussion
-├── strategic-planner/        # Skills for strategic planning and decision making
-└── task-automator/          # Skills for task automation and workflow optimization
+└── round-table-analysis/    # Deep analysis framework using philosophical perspectives
+    └── SKILL.md
 ```
 
-### Skill Categories
+## Available Skills
 
-#### 🔄 Round Table Analysis
-Skills designed to facilitate multi-perspective analysis, collaborative decision-making, and comprehensive problem exploration from different viewpoints.
+### 🔄 Round Table Analysis
 
-#### 🎯 Strategic Planner
-Skills focused on strategic thinking, planning, goal setting, and long-term decision-making processes.
+**Purpose**: Deep pre-execution analysis framework using four philosophers (Socrates, Aristotle, Feynman, Drucker) for structured critical thinking.
 
-#### ⚙️ Task Automator
-Skills that help automate repetitive tasks, optimize workflows, and improve productivity through intelligent automation.
+**When to use**:
+- Before implementing complex features
+- When you need to thoroughly understand a topic
+- To question assumptions and explore multiple perspectives
+- For complex decisions requiring deeper analysis
 
-## 🚀 How to Add Claude Skills
+**Trigger phrases**:
+- "help me think through"
+- "analyze this topic"
+- "before we start"
+- "I want to understand"
 
-### Method 1: Using Claude Desktop App
+**Location**: `round-table-analysis/`
 
-1. **Locate your Claude configuration file:**
-   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-   - **Linux**: `~/.config/Claude/claude_desktop_config.json`
+## 🚀 How to Add Skills to Claude Code
 
-2. **Add the skill to your configuration:**
-   Open the configuration file and add the skill under the `mcpServers` section:
+### Prerequisites
 
-   ```json
-   {
-     "mcpServers": {
-       "your-skill-name": {
-         "command": "node",
-         "args": ["/path/to/my-claude-skills/skill-category/skill-name/index.js"]
-       }
-     }
-   }
-   ```
+You need Claude Code (CLI or Desktop) installed to use these skills.
 
-3. **Restart Claude Desktop** to load the new skills.
+### Installation Methods
 
-### Method 2: Direct Integration
+#### Method 1: Add Skills Directory to Claude Code
 
-For skills that provide direct integration:
+The easiest way is to add this entire repository as a skills directory:
 
-1. Clone this repository:
+1. **Clone this repository**:
    ```bash
    git clone https://github.com/pianzhu/my-claude-skills.git
    ```
 
-2. Navigate to the specific skill directory:
-   ```bash
-   cd my-claude-skills/[skill-category]/[skill-name]
+2. **Add to Claude Code configuration**:
+
+   Edit your Claude configuration file:
+   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+   - **Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+   Add the skills directory path:
+   ```json
+   {
+     "skillDirectories": [
+       "/path/to/my-claude-skills"
+     ]
+   }
    ```
 
-3. Follow the specific installation instructions in the skill's README file.
+3. **Restart Claude** to load the skills.
 
-### Method 3: Using MCP (Model Context Protocol)
+#### Method 2: Copy Individual Skills
 
-If the skill supports MCP:
+You can copy individual skill folders to your local Claude skills directory:
 
-1. Install the skill as an MCP server
-2. Configure it in your Claude Desktop settings
-3. The skill will be available across all your Claude conversations
+1. **Locate your Claude skills directory** (create if it doesn't exist):
+   - **macOS/Linux**: `~/.claude/skills/`
+   - **Windows**: `%USERPROFILE%\.claude\skills\`
 
-## 📖 Usage
+2. **Copy the skill folder**:
+   ```bash
+   cp -r round-table-analysis ~/.claude/skills/
+   ```
 
-Each skill directory contains:
-- **README.md**: Detailed documentation and usage instructions
-- **Configuration files**: Necessary setup files
-- **Examples**: Sample use cases and demonstrations
+3. **Restart Claude** to load the skill.
 
-## 🛠️ Development Status
+### Using Skills
 
-**Note**: This repository is currently under development. Skill directories will be added progressively with complete documentation and implementation.
+Once installed, skills are automatically available in Claude Code:
+
+1. **Automatic activation**: Claude will use skills when it detects relevant trigger phrases
+2. **Manual activation**: You can explicitly invoke a skill by name
+3. **Skill context**: Skills provide additional instructions and capabilities to Claude
+
+## 📖 Skill Format
+
+Each skill follows this structure:
+
+```markdown
+---
+name: skill-name
+description: What the skill does and when to use it
+---
+
+# Skill Title
+
+[Instructions that Claude follows when skill is active]
+
+## Usage Guidelines
+- Guideline 1
+- Guideline 2
+
+## Examples
+- Example usage patterns
+```
+
+## 🛠️ Creating Your Own Skills
+
+Want to create a custom skill? Follow these steps:
+
+1. **Create a new folder** with a descriptive name (lowercase, hyphens for spaces)
+2. **Add a `SKILL.md` file** with YAML frontmatter
+3. **Define the skill**:
+   - `name`: Unique identifier (lowercase, hyphenated)
+   - `description`: Complete description of functionality and use cases
+4. **Write instructions** for Claude to follow
+5. **Test the skill** in Claude Code
+
+See the [official skills repository](https://github.com/anthropics/skills) for more examples.
 
 ## 📝 Contributing
 
-Contributions are welcome! If you'd like to add a new skill or improve existing ones:
+Contributions are welcome! To add a new skill:
 
-1. Fork the repository
-2. Create a new branch for your skill
-3. Add your skill to the appropriate category
-4. Submit a pull request with documentation
+1. Fork this repository
+2. Create a new skill folder following the standard format
+3. Test your skill thoroughly
+4. Submit a pull request with:
+   - The skill folder containing `SKILL.md`
+   - Updated README with skill description
+   - Usage examples (optional)
 
 ## 📄 License
 
@@ -99,10 +146,10 @@ This project is licensed under the terms specified in the LICENSE file.
 
 ## 🔗 Resources
 
+- [Anthropic Skills Repository](https://github.com/anthropics/skills)
+- [Claude Code Documentation](https://docs.claude.com/claude-code)
 - [Claude Desktop App](https://claude.ai/download)
-- [Model Context Protocol Documentation](https://modelcontextprotocol.io/)
-- [Claude API Documentation](https://docs.anthropic.com/)
 
 ---
 
-**Status**: 🚧 Under Construction - Skills will be added incrementally
+**Current Skills**: 1 | **Status**: Active Development
