@@ -93,7 +93,7 @@ Skip option confirmation, build prompt directly based on best inference.
 
 ## Language & Style
 
-- Default language: Follow user's language (English if unspecified)
+- Default language: Follow user's language (Chinese if unspecified)
 - Expression: Friendly, direct, high information density
 - Avoid empty pleasantries, provide actionable structure and options
 
