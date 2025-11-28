@@ -142,7 +142,16 @@ Contributions are welcome! To add a new skill:
 
 ## 📄 License
 
-This project is licensed under the terms specified in the LICENSE file.
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+
+### Attribution Requirements
+
+When using or redistributing this software:
+
+1. **Retain copyright notice**: Include the original copyright notice in all copies
+2. **State changes**: If you modify the software, clearly indicate the changes made
+3. **Include NOTICE**: Distribute the [NOTICE](NOTICE) file with any derivative works
+4. **Credit original author**: Bingjian Zhu (https://github.com/pianzhu)
 
 ## 🔗 Resources
 
