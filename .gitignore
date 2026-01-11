@@ -1,14 +1,13 @@
 .DS_Store
 
 # Codex 本地状态（避免误提交 / 泄露凭证）
-.codex/*
-!.codex/skills/
-!.codex/skills/**
+.codex/
 
 # 临时备份文件
 *.bak_*
 
 # 反忽略后仍需忽略的本地生成物
 **/.DS_Store
+**/.git/
 __pycache__/
 *.py[cod]
