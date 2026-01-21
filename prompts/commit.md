@@ -1,5 +1,5 @@
 ---
-description: Git Commit-push智能助手。
+description: Git Commit智能助手。
 ---
 
 # Git Commit 智能助手
@@ -27,11 +27,10 @@ description: Git Commit-push智能助手。
 
 - subject：简洁，不超过50字符，祈使句，首字母小写
 - body：说明"为什么"而非"做了什么"
-1. **执行提交并推送**：
+1. **执行提交**：
 - 如有未暂存的变更，先 `git add .`
 - 使用 HEREDOC 格式执行 `git commit`
 - 运行 `git status` 确认提交成功
-- 自动执行 `git push` 推送到远程仓库
 - 显示推送结果
 
 ## 安全规则
