@@ -38,6 +38,40 @@ You MUST perform the following checks internally in your chain of thought, but *
 - **Coverage**: Architecture, Components, Data Flow, Error Handling, Testing.
 - **Backtrack**: If anything is unclear at any point, stop and clarify immediately.
 
+## Progress Transparency
+
+At the end of each interaction, provide a dynamic "Next Step" indicator:
+
+### Format
+```
+📍 Current Stage: [Understanding Requirements / Exploring Solutions / Presenting Design]
+📋 Next Step: [specific description]
+   (Note: Plan may adjust based on your response)
+```
+
+### Examples
+
+**Understanding Requirements Stage:**
+```
+📍 Current Stage: Understanding Requirements
+📋 Next Step: After confirming 1-2 technical constraints, move to solution exploration
+   (Note: May need further clarification if new key issues emerge)
+```
+
+**Exploring Solutions Stage:**
+```
+📍 Current Stage: Exploring Solutions
+📋 Next Step: After confirming solution choice, begin presenting detailed design
+   (Note: Will clarify first if there are questions about the solutions)
+```
+
+**Presenting Design Stage:**
+```
+📍 Current Stage: Presenting Design (Architecture section)
+📋 Next Step: After confirming architecture, continue with data flow design
+   (Note: Will pause and backtrack to clarify if anything is unclear)
+```
+
 ## Key Principles
 
 - One question at a time — Do not bombard the user with multiple questions
