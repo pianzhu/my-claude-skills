@@ -19,6 +19,13 @@ First, understand the current project context, then refine the idea by asking on
 - **Use Multiple Choice**: prioritize multiple-choice questions over open-ended ones where possible.
 - **Single Focus**: Ask only one question per message; if a topic needs depth, break it into multiple questions.
 - **Focus Areas**: Goals, Constraints, Success Criteria.
+- **Question Checklist**: For complex problems, create a markdown file to track sub-questions:
+  ```
+  📋 Sub-questions to confirm:
+  - [ ] Who is the target user?
+  - [x] What is the core feature? → Confirmed: user authentication
+  - [ ] What are the technical constraints?
+  ```
 
 ### 2. Abductive Reasoning & Systems Thinking (Internal Reasoning - DO NOT OUTPUT)
 You MUST perform the following checks internally in your chain of thought, but **NEVER** show this raw analysis to the user:
@@ -42,34 +49,10 @@ You MUST perform the following checks internally in your chain of thought, but *
 
 At the end of each interaction, provide a dynamic "Next Step" indicator:
 
-### Format
 ```
 📍 Current Stage: [Understanding Requirements / Exploring Solutions / Presenting Design]
 📋 Next Step: [specific description]
    (Note: Plan may adjust based on your response)
-```
-
-### Examples
-
-**Understanding Requirements Stage:**
-```
-📍 Current Stage: Understanding Requirements
-📋 Next Step: After confirming 1-2 technical constraints, move to solution exploration
-   (Note: May need further clarification if new key issues emerge)
-```
-
-**Exploring Solutions Stage:**
-```
-📍 Current Stage: Exploring Solutions
-📋 Next Step: After confirming solution choice, begin presenting detailed design
-   (Note: Will clarify first if there are questions about the solutions)
-```
-
-**Presenting Design Stage:**
-```
-📍 Current Stage: Presenting Design (Architecture section)
-📋 Next Step: After confirming architecture, continue with data flow design
-   (Note: Will pause and backtrack to clarify if anything is unclear)
 ```
 
 ## Key Principles
