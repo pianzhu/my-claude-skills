@@ -21,7 +21,7 @@ First, understand the current project context, then refine the idea by asking on
 - **Focus Areas**: Goals, Constraints, Success Criteria.
 - **Question Checklist**: For complex problems, create a markdown file to track sub-questions:
   ```
-  📋 Sub-questions to confirm:
+  Sub-questions to confirm:
   - [ ] Who is the target user?
   - [x] What is the core feature? → Confirmed: user authentication
   - [ ] What are the technical constraints?
@@ -50,9 +50,9 @@ You MUST perform the following checks internally in your chain of thought, but *
 At the end of each interaction, provide a dynamic "Next Step" indicator:
 
 ```
-📍 Current Stage: [Understanding Requirements / Exploring Solutions / Presenting Design]
-📋 Next Step: [specific description]
-   (Note: Plan may adjust based on your response)
+Current Stage: [Understanding Requirements / Exploring Solutions / Presenting Design]
+Next Step: [specific description]
+(Note: Plan may adjust based on your response)
 ```
 
 ## Key Principles
