@@ -19,7 +19,6 @@ First, understand the current project context, then refine the idea by asking on
 - **Use Multiple Choice**: prioritize multiple-choice questions over open-ended ones where possible.
 - **Single Focus**: Ask only one question per message; if a topic needs depth, break it into multiple questions.
 - **Focus Areas**: Goals, Constraints, Success Criteria.
-- **Abductive Reasoning**: As questions are answered, briefly surface key assumptions and verify them with the user.
 - **Question Checklist**: For complex problems, create a markdown file to track sub-questions:
   ```
   Sub-questions to confirm:
@@ -28,14 +27,18 @@ First, understand the current project context, then refine the idea by asking on
   - [ ] What are the technical constraints?
   ```
 
-### 2. Explore Solutions
-- Based on the confirmed assumptions, propose **2-3 different solutions** with tradeoffs.
-- **Systems Thinking**: For each solution, identify key leverage points and potential side effects; use these to explain why you recommend or reject it.
+### 2. Abductive Reasoning & Systems Thinking (Internal Reasoning - DO NOT OUTPUT)
+You MUST perform the following checks internally in your chain of thought, but **NEVER** show this raw analysis to the user:
+- **Abductive Reasoning**: List 2–3 assumptions (include 1 low-probability high-risk assumption); identify the minimum action to verify the most likely one.
+- **Systems Thinking**: Mark 1–2 key leverage points and side-effect channels; use these to constrain solution boundaries.
+- **Guardrails**: Do not discard low-probability high-risk assumptions until falsified; backtrack if premises are negated.
+
+### 3. Explore Solutions
+- Based on the internal analysis, propose **2-3 different solutions** with tradeoffs.
 - Present options conversationally, offering your **recommendation and rationale**.
 - State your recommended solution first, then explain why.
-- **Backtrack** if any earlier assumption is negated by new information.
 
-### 3. Present Design
+### 4. Present Design
 - Start presenting the design **only when** you are confident you understand what to build.
 - **Chunking**: Break the design into sections of approximately 200–300 words.
 - **Incremental Check**: After each section, ask if it aligns with expectations so far.
