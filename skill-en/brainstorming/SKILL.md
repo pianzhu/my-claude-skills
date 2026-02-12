@@ -7,33 +7,36 @@ description: "You MUST use this before any creative work - creating features, bu
 
 ## Overview
 
-Help refine ideas into complete designs and specifications through natural collaborative dialogue.
+As a Socratic facilitator, help refine ideas into complete designs and specifications through questioning and collaborative dialogue — guide toward clarity, not premature answers.
 
-First, understand the current project context, then refine the idea by asking only **one question at a time**. Once you understand what needs to be built, present the design in small sections (approx. 200–300 words each), confirming alignment after each section.
+First, understand the current project context, then refine the idea through focused questioning. Once you understand what needs to be built, present the design in small sections (approx. 200–300 words each), confirming alignment after each section.
 
 ## Process
 
 ### 1. Understand the Idea
 - **Check Context First**: Review current project state (code files, documentation, recent commits).
-- **One Question at a Time**: progressively refine the idea.
-- **Use Multiple Choice**: prioritize multiple-choice questions over open-ended ones where possible.
-- **Single Focus**: Ask only one question per message; if a topic needs depth, break it into multiple questions.
-- **Focus Areas**: Goals, Constraints, Success Criteria.
+- **Focus Areas**: Progressively clarify Goals, Constraints, and Success Criteria.
 - **Abductive Reasoning**: As questions are answered, briefly surface key assumptions and verify them with the user.
-- **Question Checklist**: For complex problems, create a markdown file to track sub-questions:
-  ```
-  Sub-questions to confirm:
-  - [ ] Who is the target user?
-  - [x] What is the core feature? → Confirmed: user authentication
-  - [ ] What are the technical constraints?
-  ```
+- **Use `AskUserQuestion` tool** for all user-facing questions — let the tool handle interaction format.
 
 ### 2. Explore Solutions
-- Based on the confirmed assumptions, propose **2-3 different solutions** with tradeoffs.
-- **Systems Thinking**: For each solution, identify key leverage points and potential side effects; use these to explain why you recommend or reject it.
-- Present options conversationally, offering your **recommendation and rationale**.
-- State your recommended solution first, then explain why.
-- **Backtrack** if any earlier assumption is negated by new information.
+
+Follow a structured reasoning chain to bridge the gap from problem to solution:
+
+#### Step 1: Constraint Analysis
+- From confirmed goals and constraints, extract the **core tensions and key decision points**.
+- State explicitly: "Given X goal and Y constraint, the key decision is Z."
+
+#### Step 2: Path Derivation
+- For each key decision point, derive **2-3 viable paths**.
+- For each path, explain **why it is feasible** (or why not) based on the constraints identified above.
+
+#### Step 3: Solution Synthesis
+- Combine the best paths into **2-3 complete solutions** with tradeoffs.
+- **Systems Thinking**: For each solution, identify key leverage points and potential side effects.
+- State your **recommended solution first**, then explain why.
+
+**Backtrack** if any earlier assumption is negated by new information.
 
 ### 3. Present Design
 - Start presenting the design **only when** you are confident you understand what to build.
@@ -54,8 +57,7 @@ Next Step: [specific description]
 
 ## Key Principles
 
-- One question at a time — Do not bombard the user with multiple questions
-- Prioritize multiple choice — Easier to answer than open-ended questions when feasible
+- Structured reasoning — Always show the chain: Constraint Analysis → Path Derivation → Solution Synthesis
 - Strictly follow YAGNI — Remove unnecessary features from all designs
 - Explore alternatives — Always provide 2–3 options before finalizing
 - Incremental verification — Present design in chunks and verify each piece
