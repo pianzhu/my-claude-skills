@@ -50,11 +50,11 @@
 
 ### 8. Task Management
 
-1. **Plan First**: Write plan to `tasks/todo.md` with checkable items. Human review and AI-assisted feedback should be added as comments. The agent must address the approved comments before writing finalized execution items into the task tool.
-2. **Verify Plan**: Check in before starting implementation
-3. **Track Progress**: Update execution status in the task tool as you go
-4. **Explain Changes**: High-level summary at each step
-5. **Document Results**: Add review section to `tasks/todo.md`
+1. **Use Existing Plans**: When a task already has detailed plan steps, use that plan as the execution source of truth. This includes plans produced in plan mode and plan documents produced in agent mode. 
+2. **Verify Plan**: Before implementation, briefly check in with the user on the current phase, execution order, and key assumptions or risks. Only create the first batch of task tool items after that verification.
+3. **Track Progress**: Use the task tool to execute the plan in rolling phases. Add only the current phase or next 1-3 actionable steps, complete them, then add the next batch. Do not load the entire plan into the task tool at once.
+4. **Explain Changes**: Provide a high-level summary after each completed phase or meaningful step, including what changed, why it changed, and the current status.
+5. **Document Results**: Keep a review step. If a plan document exists, write the review back into that document. Otherwise, record the review in the conversation. Include outcome, verification, and any follow-up notes.
 6. **Capture Lessons**: Update `tasks/lessons.md` after corrections
 
 ### Core Principles
